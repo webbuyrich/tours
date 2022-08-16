@@ -1,16 +1,15 @@
-import React, {
-  useState
-} from 'react';
+import React, { useState } from 'react';
 import data from './data';
 import List from './List';
 
 function App() {
-  const [people, setPeople] = useState()
+  // pass data to useState
+  const [people, setPeople] = useState(data)
 
   return(
     <main>
       <section className='container'>
-        <h3>0 birthdays</h3>
+        <h3>{people.length}  birthdays</h3>
         <List />
         <button onClick={()=> console.log('you clicked me')}>Clear All</button>
       </section>
