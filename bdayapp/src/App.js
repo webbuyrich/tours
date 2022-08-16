@@ -9,8 +9,9 @@ function App() {
   return(
     <main>
       <section className='container'>
+        {/* show number of birthdays from list */}
         <h3>{people.length}  birthdays</h3>
-        <List />
+        <List people={people} />
         <button onClick={()=> console.log('you clicked me')}>Clear All</button>
       </section>
     </main>

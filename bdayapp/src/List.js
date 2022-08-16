@@ -1,9 +1,23 @@
 import React from 'react';
 
-const List = () => {
+const List = ({ people }) => {
+    // iterate through data json file using map
     return(
         <div>
-            <h2>List components</h2>
+            {people.map((person)=>{
+            const {id, name, age, image} =person;
+            return(
+                <div>
+                    <article key={id} className="person">
+                        <img src={image} alt={name} />
+                        <div>
+                            <h4>{name}</h4>
+                            <p>{age} years</p>
+                        </div>
+                    </article>
+                </div>
+            )
+            })}
         </div>
     )
 }
