@@ -12,7 +12,7 @@ function App() {
         {/* show number of birthdays from list */}
         <h3>{people.length}  birthdays</h3>
         <List people={people} />
-        <button onClick={()=> console.log('you clicked me')}>Clear All</button>
+        <button onClick={()=> setPeople([])}>Clear All</button>
       </section>
     </main>
   )
