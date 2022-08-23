@@ -8,6 +8,18 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   const [tours, setTours] = useState([])
 
+  // get the data
+  const fetchTours = async () => {
+    setLoading(true)
+    const response = await fetch(url)
+    const tours = await response.json()
+    console.log(tours)
+  }
+
+  useEffect(()=>{
+    fetchTours();
+  }, [])
+
   if(loading){
     return(
       <main>
