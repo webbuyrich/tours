@@ -15,7 +15,9 @@ const Tour = ({ id, image, info, price, name }) => {
         </div>
         {/*set conditional to display full text or partial text*/}
         <p>{ readMore ? info : `${info.substring(0, 200)}...
-        `}</p>
+        `}
+        <button onClick={()=>setReadMore(!readMore)}>{readMore ? 'show less' : 'read more'}</button>
+        </p>
         <button className='delete-btn'>Not Intertested</button>
       </footer>
     </article>
