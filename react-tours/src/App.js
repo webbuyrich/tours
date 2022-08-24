@@ -14,21 +14,18 @@ const App = () => {
 
     // catch network errors
     try{
-
       const response = await fetch(url)
       const tours = await response.json()
       setLoading(false);
       setTours(tours)
-
     } catch(error){
-
       setLoading(false)
-      console.log(error);
-      
+      console.log(error);      
     }
     
   }
 
+  // run fetchTours one time
   useEffect(()=>{
     fetchTours();
   }, [])
@@ -41,7 +38,7 @@ const App = () => {
     )
   }
 
-  return <main><Tours /></main>
+  return <main><Tours tours={tours}/></main>
 }
 
 export default App
